@@ -15,6 +15,7 @@ struct Items : Codable {
 	let content_license : String?
 	let link : String?
 	let title : String?
+    let body: String?
 
 	enum CodingKeys: String, CodingKey {
 
@@ -31,6 +32,7 @@ struct Items : Codable {
 		case content_license = "content_license"
 		case link = "link"
 		case title = "title"
+        case body
 	}
 
 	init(from decoder: Decoder) throws {
@@ -48,6 +50,8 @@ struct Items : Codable {
 		content_license = try values.decodeIfPresent(String.self, forKey: .content_license)
 		link = try values.decodeIfPresent(String.self, forKey: .link)
 		title = try values.decodeIfPresent(String.self, forKey: .title)
+        body = try values.decodeIfPresent(String.self, forKey: .body)
+
 	}
 
 }

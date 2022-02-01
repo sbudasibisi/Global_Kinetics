@@ -1,16 +1,14 @@
-//
-//  QuestionTableViewCell.swift
-//  Global_Kinetics
-//
-//  Created by Sibusiso Sibisi on 2022/01/31.
-//
 
 import UIKit
 
 class QuestionTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var onwerName: UILabel!
+    @IBOutlet private weak var title: UILabel!
+    @IBOutlet private weak var onwerName: UILabel!
+    @IBOutlet private weak var votes: UILabel!
+    @IBOutlet private weak var answers: UILabel!
+    @IBOutlet private weak var views: UILabel!
+    @IBOutlet weak var imageViewWidthConstraint: NSLayoutConstraint!
     
     static let cellIdentifier = "QuestionTableViewCell"
     
@@ -31,8 +29,16 @@ class QuestionTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    }
+    
+    func configureCellData(title: String, onwerName: String, votes: String, answers: String, views: String, isQuestionAnswered: Bool){
+        self.title.text = title
+        self.onwerName.text = onwerName
+        self.votes.text = votes
+        self.answers.text = answers
+        self.views.text = views
+        imageViewWidthConstraint.constant = isQuestionAnswered == true ? 20 : 0
+        
     }
     
 }

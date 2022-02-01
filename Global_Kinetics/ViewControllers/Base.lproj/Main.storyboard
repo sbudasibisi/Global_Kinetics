@@ -40,14 +40,29 @@
                                 <rect key="frame" x="0.0" y="139" width="414" height="723"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stack Overflow Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QKn-uf-1Ku">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="QVq-dI-9MN">
+                                <rect key="frame" x="197" y="465" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="secondarySystemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="QVq-dI-9MN" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="E5t-0u-G60"/>
                             <constraint firstItem="DUr-HF-k7D" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="HpB-BB-Jbc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="QKn-uf-1Ku" secondAttribute="bottom" id="LmZ-DV-yZd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="r1B-V1-9o9" secondAttribute="trailing" id="Ug3-lm-FNa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QKn-uf-1Ku" secondAttribute="trailing" id="VHY-7q-LO8"/>
+                            <constraint firstItem="QKn-uf-1Ku" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="XU6-2z-d8N"/>
                             <constraint firstItem="DUr-HF-k7D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aug-Om-Noi"/>
+                            <constraint firstItem="QVq-dI-9MN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="bcM-JZ-REy"/>
                             <constraint firstItem="r1B-V1-9o9" firstAttribute="top" secondItem="DUr-HF-k7D" secondAttribute="bottom" symbolic="YES" id="c7g-dH-byG"/>
+                            <constraint firstItem="QKn-uf-1Ku" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lJR-7p-464"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="r1B-V1-9o9" secondAttribute="bottom" id="ldi-Wf-ZRH"/>
                             <constraint firstItem="r1B-V1-9o9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="pJw-cm-24l"/>
                             <constraint firstItem="DUr-HF-k7D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wZx-cv-zkk"/>
@@ -55,7 +70,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="Z3U-23-u45"/>
                     <connections>
+                        <outlet property="busyIndicator" destination="QVq-dI-9MN" id="Jio-6y-UJJ"/>
                         <outlet property="questionsTableView" destination="r1B-V1-9o9" id="fKe-U6-Kp9"/>
+                        <outlet property="searchBar" destination="DUr-HF-k7D" id="Cg9-7Z-CWn"/>
+                        <outlet property="searchLabel" destination="QKn-uf-1Ku" id="E0d-Ce-uW9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
